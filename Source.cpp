@@ -1,95 +1,3 @@
-/*#include <iostream>
-#include <string>
-#include <Windows.h>
-#include <fstream>
-#include <conio.h>
-#include <iomanip>
-
-using namespace std;
-
-class String
-{
-    char* data = nullptr;
-    size_t sz = 0;
-
-public:
-    String(void) = default;
-    String(const char* s)
-    {
-        sz = strlen(s);
-        data = new char[sz + 1];
-        for (size_t i = 0; i < sz; ++i)
-            data[i] = s[i];
-        data[sz] = '\0';
-    }
-
-    String(const String& other)
-    {
-        sz = other.sz;
-        for (size_t i = 0; i <= sz; ++i)
-            data[i] = other.data[i];
-    }
-
-    ~String(void) 
-    { 
-        
-        delete[] data; 
-    
-    }
-
-    int operator = (const String&);
-    
-
-    char operator++(void);
-    
-
-    char operator++(int);
-    
-
-    const char* c_str(void) const { return data; }
-
-};
-
-int String:: operator = (const String&other)
-{
-    if (&other == this)
-        return *this;
-    delete[] data;
-    sz = other.sz;
-    data = new char[sz + 1];
-    for (size_t i = 0; i <= sz; ++i)
-        data[i] = other.data[i];
-    return *this;
-}
-
-char String::operator++(void)
-{
-    char tmp = data[0];
-    for (size_t i = 0; i < sz - 1; ++i)
-        data[i] = data[i + 1];
-    return *this;
-}
-
-char String::operator++(int)
-{
-    String copy = *this;
-    char tmp = data[sz - 1];
-    for (size_t i = sz - 1; i > 0; --i)
-        data[i] = data[i - 1];
-    data[0] = tmp;
-    return copy;
-}
-
-
-
-int main()
-{
-
-
-
-
-
-}*/
 #include <iostream>
 #include <string>
 #include <Windows.h>
@@ -208,10 +116,10 @@ void Array::fillArray() {
 	int choose = chooseFillArray();
 	if (choose == 0) {
 		
-		cout << "Введите левую границу диапозона: ";
+		cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г«ГҐГўГіГѕ ГЈГ°Г Г­ГЁГ¶Гі Г¤ГЁГ ГЇГ®Г§Г®Г­Г : ";
 		int l = 0, r = 0;
 		cin >> l;
-		cout << "Введите правую границу диапозона: ";
+		cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЇГ°Г ГўГіГѕ ГЈГ°Г Г­ГЁГ¶Гі Г¤ГЁГ ГЇГ®Г§Г®Г­Г : ";
 		cin >> r;
 		srand(time(NULL));
 		for (int i = 0; i < n; i++)
@@ -219,9 +127,9 @@ void Array::fillArray() {
 				arr[i][j] = rand() % (r - l + 1) + l;
 	}
 	else {
-		cout << "Введите элементы массива: " << endl;
+		cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЅГ«ГҐГ¬ГҐГ­ГІГ» Г¬Г Г±Г±ГЁГўГ : " << endl;
 		for (int i = 0; i < n; i++) {
-			cout << i + 1 << " - строка из " << m << " символов: ";
+			cout << i + 1 << " - Г±ГІГ°Г®ГЄГ  ГЁГ§ " << m << " Г±ГЁГ¬ГўГ®Г«Г®Гў: ";
 			for (int j = 0; j < m; j++)
 				cin >> arr[i][j];
 		}
@@ -241,17 +149,17 @@ void Vector::fillVector() {
 	int choose = chooseFillArray();
 	if (choose == 0) {
 		
-		cout << "Введите левую границу диапозона: ";
+		cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г«ГҐГўГіГѕ ГЈГ°Г Г­ГЁГ¶Гі Г¤ГЁГ ГЇГ®Г§Г®Г­Г : ";
 		int l = 0, r = 0;
 		cin >> l;
-		cout << "Введите правую границу диапозона: ";
+		cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЇГ°Г ГўГіГѕ ГЈГ°Г Г­ГЁГ¶Гі Г¤ГЁГ ГЇГ®Г§Г®Г­Г : ";
 		cin >> r;
 		srand(time(NULL));
 		for (int i = 0; i < m; i++)
 			vec[i] = rand() % (r - l + 1) + l;
 	}
 	else {
-		cout << "Введите элементы массива: " << endl;
+		cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЅГ«ГҐГ¬ГҐГ­ГІГ» Г¬Г Г±Г±ГЁГўГ : " << endl;
 		for (int i = 0; i < m; i++) {
 			cin >> vec[i];
 		}
@@ -261,9 +169,9 @@ void Vector::fillVector() {
 int main() {
 	setlocale(0, "rus");
 	int n, m;
-	cout << "Введите размер матрицы ";
+	cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г°Г Г§Г¬ГҐГ° Г¬Г ГІГ°ГЁГ¶Г» ";
 	cin >> n;
-	cout << "Введите второй размер матрицы и размер вектора ";
+	cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГўГІГ®Г°Г®Г© Г°Г Г§Г¬ГҐГ° Г¬Г ГІГ°ГЁГ¶Г» ГЁ Г°Г Г§Г¬ГҐГ° ГўГҐГЄГІГ®Г°Г  ";
 	cin >> m;
 	
 	Array arr(n, m);
@@ -294,14 +202,14 @@ int main() {
 int chooseFillArray() {
 	int choose_menu = 0, keyboard_button = 0;
 	while (true) {
-		cout << "Стрелочками ВВЕРХ и ВНИЗ выберите как заполнить матрицу: " << endl;
+		cout << "Г‘ГІГ°ГҐГ«Г®Г·ГЄГ Г¬ГЁ Г‚Г‚Г…ГђГ• ГЁ Г‚ГЌГ€Г‡ ГўГ»ГЎГҐГ°ГЁГІГҐ ГЄГ ГЄ Г§Г ГЇГ®Г«Г­ГЁГІГј Г¬Г ГІГ°ГЁГ¶Гі: " << endl;
 		choose_menu = (choose_menu + 2) % 2;
 
-		if (choose_menu == 0) { cout << " -> Через случайные числа" << endl; }
-		else { cout << " Через случайные числа" << endl; }
+		if (choose_menu == 0) { cout << " -> Г—ГҐГ°ГҐГ§ Г±Г«ГіГ·Г Г©Г­Г»ГҐ Г·ГЁГ±Г«Г " << endl; }
+		else { cout << " Г—ГҐГ°ГҐГ§ Г±Г«ГіГ·Г Г©Г­Г»ГҐ Г·ГЁГ±Г«Г " << endl; }
 
-		if (choose_menu == 1) { cout << " -> С клавиатуры" << endl; }
-		else { cout << " С клавиатуры" << endl; }
+		if (choose_menu == 1) { cout << " -> Г‘ ГЄГ«Г ГўГЁГ ГІГіГ°Г»" << endl; }
+		else { cout << " Г‘ ГЄГ«Г ГўГЁГ ГІГіГ°Г»" << endl; }
 
 		keyboard_button = _getch();
 		if (keyboard_button == 224) {
@@ -320,17 +228,17 @@ int chooseMenu() {
 		
 		choose_menu = (choose_menu + 4) % 4;
 
-		if (choose_menu == 0) { cout << " -> Умножение вектора на матрицу и вывод итоговой матрицы." << endl; }
-		else { cout << " Умножение вектора на матрицу и вывод итоговой матрицы." << endl; }
+		if (choose_menu == 0) { cout << " -> Г“Г¬Г­Г®Г¦ГҐГ­ГЁГҐ ГўГҐГЄГІГ®Г°Г  Г­Г  Г¬Г ГІГ°ГЁГ¶Гі ГЁ ГўГ»ГўГ®Г¤ ГЁГІГ®ГЈГ®ГўГ®Г© Г¬Г ГІГ°ГЁГ¶Г»." << endl; }
+		else { cout << " Г“Г¬Г­Г®Г¦ГҐГ­ГЁГҐ ГўГҐГЄГІГ®Г°Г  Г­Г  Г¬Г ГІГ°ГЁГ¶Гі ГЁ ГўГ»ГўГ®Г¤ ГЁГІГ®ГЈГ®ГўГ®Г© Г¬Г ГІГ°ГЁГ¶Г»." << endl; }
 
-		if (choose_menu == 1) { cout << " -> Вывести матрицу" << endl; }
-		else { cout << " Вывести матрицу" << endl; }
+		if (choose_menu == 1) { cout << " -> Г‚Г»ГўГҐГ±ГІГЁ Г¬Г ГІГ°ГЁГ¶Гі" << endl; }
+		else { cout << " Г‚Г»ГўГҐГ±ГІГЁ Г¬Г ГІГ°ГЁГ¶Гі" << endl; }
 
-		if (choose_menu == 2) { cout << " -> Вывести вектор" << endl; }
-		else { cout << " Вывести вектор" << endl; }
+		if (choose_menu == 2) { cout << " -> Г‚Г»ГўГҐГ±ГІГЁ ГўГҐГЄГІГ®Г°" << endl; }
+		else { cout << " Г‚Г»ГўГҐГ±ГІГЁ ГўГҐГЄГІГ®Г°" << endl; }
 
-		if (choose_menu == 3) { cout << " -> Завершить программу" << endl; }
-		else { cout << " Завершить программу" << endl; }
+		if (choose_menu == 3) { cout << " -> Г‡Г ГўГҐГ°ГёГЁГІГј ГЇГ°Г®ГЈГ°Г Г¬Г¬Гі" << endl; }
+		else { cout << " Г‡Г ГўГҐГ°ГёГЁГІГј ГЇГ°Г®ГЈГ°Г Г¬Г¬Гі" << endl; }
 
 		keyboard_button = _getch();
 		if (keyboard_button == 224) {
